@@ -88,6 +88,40 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #f59e0b;
         }
+
+        /* Modal Gallery Masonry: Menjaga rasio asli foto JPG/PNG dan video tanpa dipaksa landscape/portrait */
+        .modal-gallery-masonry {
+            column-count: 1;
+            column-gap: 1rem;
+        }
+        @media (min-width: 640px) {
+            .modal-gallery-masonry {
+                column-count: 2;
+                column-gap: 1rem;
+            }
+        }
+        .modal-gallery-item {
+            break-inside: avoid;
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            margin-bottom: 1rem;
+            display: inline-block;
+            width: 100%;
+        }
+        #modal-gallery::-webkit-scrollbar {
+            width: 6px;
+        }
+        #modal-gallery::-webkit-scrollbar-track {
+            background: #18181b;
+            border-radius: 9999px;
+        }
+        #modal-gallery::-webkit-scrollbar-thumb {
+            background: #3f3f46;
+            border-radius: 9999px;
+        }
+        #modal-gallery::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
     </style>
 </head>
 <body class="bg-white text-zinc-900 font-sans antialiased selection:bg-amber-500 selection:text-white overflow-x-hidden min-h-screen">
@@ -159,7 +193,7 @@
                     </div>
 
                     <div class="flex flex-col pr-2">
-                        <span class="text-xs font-mono font-semibold text-zinc-900">Ads Conversion Beats.</span>
+                        <span class="text-xs font-mono font-semibold text-zinc-900"></span>
                         <div class="flex items-center gap-2 text-[10px] font-mono text-zinc-500 mt-0.5">
                             <span id="audio-timer">0:60</span>
                             <div class="w-24 sm:w-32 bg-zinc-200 h-1 rounded-full overflow-hidden">
@@ -190,7 +224,7 @@
                 </div>
             </div>
 
-            <!-- SEMI-3D / 2.5D PERSPECTIVE PROFILE CARD WITH 'AVAILABLE FOR WORK' BADGE -->
+            <!-- SEMI-3D / 2.5D PERSPECTIVE PROFILE CARD -->
             <div class="lg:col-span-5 flex justify-center relative perspective-card">
                 <div class="relative w-full max-w-md">
                     
@@ -199,7 +233,6 @@
 
                     <div class="card-3d relative w-full h-[480px] rounded-3xl bg-zinc-900 p-3 border border-zinc-700/80 overflow-hidden shadow-2xl z-10 group">
                         
-                        <!-- Available for Work Badge (Mengganti SULTHAN_AULIA.PORTRAIT) -->
                         <div class="absolute top-6 left-6 z-30 bg-zinc-950/90 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-emerald-500/40 font-mono text-[11px] text-emerald-400 shadow-lg flex items-center gap-2">
                             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping absolute"></span>
                             <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 relative"></span>
@@ -249,7 +282,7 @@
         </div>
     </section>
 
-    <!-- 3. PORTFOLIO SECTION (Expanded Asymmetrical Grid: Portrait, Square, Landscape with Parallax & No Gaps) -->
+    <!-- 3. PORTFOLIO SECTION -->
     <section id="work" class="py-24 px-4 sm:px-6 max-w-[1400px] mx-auto relative z-20">
         
         <div data-parallax="-0.05" class="parallax-layer text-center max-w-4xl mx-auto mb-16 space-y-4">
@@ -264,124 +297,330 @@
             <div class="flex flex-wrap justify-center items-center gap-2 pt-6 text-xs font-mono" id="filter-tabs">
                 <button class="filter-btn active px-5 py-2.5 rounded-full glass-pill text-amber-600 border border-amber-500/50 font-bold transition-all shadow-md bg-amber-50/50" data-filter="all">All Works</button>
                 <button class="filter-btn px-5 py-2.5 rounded-full glass-pill text-zinc-600 hover:text-zinc-900 hover:border-zinc-300 transition-all" data-filter="ads">Video Ads</button>
-                <button class="filter-btn px-5 py-2.5 rounded-full glass-pill text-zinc-600 hover:text-zinc-900 hover:border-zinc-300 transition-all" data-filter="motion">Motion Graphics</button>
+                <button class="filter-btn px-5 py-2.5 rounded-full glass-pill text-zinc-600 hover:text-zinc-900 hover:border-zinc-300 transition-all" data-filter="motion">Motion & Graphics</button>
                 <button class="filter-btn px-5 py-2.5 rounded-full glass-pill text-zinc-600 hover:text-zinc-900 hover:border-zinc-300 transition-all" data-filter="product">Product & Editorial</button>
             </div>
         </div>
 
-        <!-- Dynamic & Asymmetrical Grid (Landscape, Square, Portrait cleanly locked with CSS Grid) -->
+        <!-- Dynamic Asymmetrical Grid with Consistent Dark Card Overlay Aesthetics -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[380px]" id="projects-grid">
             
-            <!-- ITEM 1: Landscape (Span 2 cols) -->
-            <div data-parallax="0.03" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-100 border border-zinc-200 shadow-xl transition-all duration-500 cursor-pointer lg:col-span-2" data-category="ads" data-project-id="urban-commercial">
-                <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80" alt="Urban Commercial" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                <video class="project-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" muted loop playsinline preload="metadata">
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+            <!-- ITEM 1: Landscape Kiri (Span 2 cols) -->
+            <div data-parallax="0.03" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800/80 shadow-2xl transition-all duration-500 cursor-pointer lg:col-span-2" data-category="ads" data-project-id="urban-commercial">
+                
+                <!-- 1. Gambar Sampul (Tampil saat Diam) -->
+                <img src="assets/videos/goobir thumbnail.png" alt="Clip Ads Campaign" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                
+                <!-- 2. Video Preview (Tampil Jernih saat Hover) -->
+                <video class="project-video absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" muted loop playsinline preload="metadata">
+                    <source src="assets/videos/goobirclip web.webm" type="video/mp4">
                 </video>
                 
-                <div class="absolute inset-0 bg-zinc-950/80 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-md p-8 flex flex-col justify-between z-10">
-                    <div class="flex justify-between items-start">
-                        <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800">
-                            [ VIDEO ADS ]
+                <!-- Ambient Overlay (Tampak saat Idle) -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-300 p-6 flex flex-col justify-between">
+                    <span class="text-amber-400 font-mono text-[10px] font-bold tracking-wider px-2.5 py-1 rounded-md bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-sm w-fit">
+                        [ VIDEO ADS ]
+                    </span>
+                    <div>
+                        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block">INTEGRATED CAMPAIGN</span>
+                        <h3 class="text-2xl font-serif italic text-zinc-100 font-normal">Clip Ads Campaign</h3>
+                    </div>
+                </div>
+
+                <!-- Active Hover Overlay (Gradient Ringan Tanpa Blur Pekat Agar Video Terang) -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-zinc-950/60 opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between z-20 pointer-events-none">
+                    <div class="flex justify-between items-start transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-950/80 border border-zinc-800 shadow-md backdrop-blur-sm">
+                            [ VIDEO ADS ] • CLICK TO VIEW
                         </span>
-                        <div class="w-8 h-8 rounded-full bg-amber-500 text-zinc-950 flex items-center justify-center">
+                        <div class="w-9 h-9 rounded-full bg-amber-500 text-zinc-950 flex items-center justify-center shadow-lg">
                             <i data-lucide="play" class="w-4 h-4 fill-zinc-950 ml-0.5"></i>
                         </div>
                     </div>
-                    <div class="space-y-2">
-                        <span class="text-xs font-mono text-zinc-400 uppercase tracking-widest block">INTEGRATED CAMPAIGN</span>
-                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Urban Commercial</h3>
-                        <p class="text-zinc-400 text-xs font-mono">Tools: Premiere Pro, DaVinci Resolve</p>
+                    <div class="space-y-1 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-xs font-mono text-amber-400 uppercase tracking-widest block font-semibold">INTEGRATED CAMPAIGN</span>
+                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Clip Ads Campaign</h3>
+                        <p class="text-zinc-300 text-xs font-mono">Tools: Premiere Pro, DaVinci Resolve</p>
                     </div>
                 </div>
             </div>
 
-            <!-- ITEM 2: Portrait (Span 2 rows if needed or standard portrait styling) -->
-            <div data-parallax="-0.02" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-100 border border-zinc-200 shadow-xl transition-all duration-500 cursor-pointer lg:row-span-2" data-category="product" data-project-id="fashion-editorial">
+            <!-- ITEM 2: Portrait Fashion (Span 2 rows) -->
+            <div data-parallax="-0.02" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800/80 shadow-2xl transition-all duration-500 cursor-pointer lg:row-span-2" data-category="product" data-project-id="fashion-editorial">
+                
+                <!-- 1. Foto Sampul (Tampil saat Idle) -->
                 <img src="assets/katalog foto/portrait editorial.jpg" alt="Fashion Editorial" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 
-                <div class="absolute inset-0 bg-zinc-950/80 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-md p-8 flex flex-col justify-between z-10">
-                    <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800 w-fit">
-                        [ PORTRAIT EDITORIAL ]
+                <!-- 2. Video Preview (Tampil & Autoplay Jernih saat Hover) -->
+                <video class="project-video absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" muted loop playsinline preload="metadata">
+                    <source src="assets/videos/dline outpit nongkrong clip.mp4" type="video/mp4">
+                </video>
+
+                <!-- Idle State Ambient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-300 p-6 flex flex-col justify-between">
+                    <span class="text-amber-400 font-mono text-[10px] font-bold tracking-wider px-2.5 py-1 rounded-md bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-sm w-fit">
+                        [ PORTRAIT FASHION ]
                     </span>
-                    <div class="space-y-2">
-                        <span class="text-xs font-mono text-zinc-400 uppercase tracking-widest block">HIGH FASHION</span>
-                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Velvet Vogue</h3>
-                        <p class="text-zinc-400 text-xs font-mono">Lighting & Color Grading Studio Pass</p>
+                    <div>
+                        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block">MODEL PORTRAIT</span>
+                        <h3 class="text-2xl font-serif italic text-zinc-100 font-normal">Fashion Portrait</h3>
+                    </div>
+                </div>
+
+                <!-- Active Hover Glass Overlay (Gradient Tipis Atas-Bawah Tanpa Blur Pekat) -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-zinc-950/60 opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between z-20 pointer-events-none">
+                    <div class="flex justify-between items-start transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-950/80 border border-zinc-800 shadow-md backdrop-blur-sm">
+                            [ PORTRAIT FASHION ] • CLICK TO VIEW
+                        </span>
+                        <div class="w-9 h-9 rounded-full bg-zinc-800 text-amber-400 flex items-center justify-center border border-zinc-700 shadow-lg">
+                            <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-xs font-mono text-amber-500 uppercase tracking-widest block font-semibold">MODEL PORTRAIT</span>
+                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Fashion Portrait</h3>
+                        <p class="text-zinc-300 text-xs font-mono">Photo & Reels Ads Product Pass</p>
                     </div>
                 </div>
             </div>
 
-            <!-- ITEM 3: Square -->
-            <div data-parallax="0.04" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-100 border border-zinc-200 shadow-xl transition-all duration-500 cursor-pointer" data-category="product" data-project-id="nonfiction-perfume">
-                <img src="assets/katalog foto/limasegidipinus.jpg" alt="Nonfiction Perfume" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <!-- ITEM 3: Square F&B -->
+            <div data-parallax="0.04" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800/80 shadow-2xl transition-all duration-500 cursor-pointer" data-category="product" data-project-id="nonfiction-perfume">
+                <img src="assets/katalog foto/limasegidipinus.jpg" alt="Limasegi Dipinus" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 
-                <div class="absolute inset-0 bg-zinc-950/80 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-md p-8 flex flex-col justify-between z-10">
-                    <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800 w-fit">
+                <!-- Idle Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-300 p-6 flex flex-col justify-between">
+                    <span class="text-amber-400 font-mono text-[10px] font-bold tracking-wider px-2.5 py-1 rounded-md bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-sm w-fit">
                         [ F&B PHOTOS ]
                     </span>
-                    <div class="space-y-2">
-                        <span class="text-xs font-mono text-zinc-400 uppercase tracking-widest block">FRAGRANCE ADS</span>
-                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">NONFICTION Perfume</h3>
-                        <p class="text-zinc-400 text-xs font-mono">Minimalist Still Life Composition</p>
+                    <div>
+                        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block">CULINARY & OUTDOOR</span>
+                        <h3 class="text-2xl font-serif italic text-zinc-100 font-normal">Limasegi Dipinus</h3>
+                    </div>
+                </div>
+
+                <!-- Hover Overlay -->
+                <div class="absolute inset-0 bg-zinc-950/85 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between z-20">
+                    <div class="flex justify-between items-start transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800 shadow-md">
+                            [ F&B PHOTOS ] • CLICK TO VIEW
+                        </span>
+                        <div class="w-9 h-9 rounded-full bg-zinc-800 text-amber-400 flex items-center justify-center border border-zinc-700 shadow-lg">
+                            <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-xs font-mono text-amber-500 uppercase tracking-widest block font-semibold">CULINARY & OUTDOOR</span>
+                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Limasegi Dipinus</h3>
+                        <p class="text-zinc-400 text-xs font-mono">Warm Culinary Shots & Pine Forest Mood</p>
                     </div>
                 </div>
             </div>
 
-            <!-- ITEM 4: Square -->
-            <div data-parallax="-0.03" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-100 border border-zinc-200 shadow-xl transition-all duration-500 cursor-pointer" data-category="motion" data-project-id="glaze-craze">
-                <img src="ASSET PORTO/Foto Produk/TEDS PRODUK.jpeg" alt="Glaze Craze" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                <video class="project-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" muted loop playsinline preload="metadata">
+            <!-- ITEM 4: Square TEDS Product -->
+            <div data-parallax="-0.03" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800/80 shadow-2xl transition-all duration-500 cursor-pointer" data-category="motion" data-project-id="glaze-craze">
+                <img src="assets/Foto Produk/TEDS PRODUK.jpeg" alt="TEDS Product" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <video class="project-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 z-10" muted loop playsinline preload="metadata">
                     <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
                 </video>
                 
-                <div class="absolute inset-0 bg-zinc-950/80 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-md p-8 flex flex-col justify-between z-10">
-                    <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800 w-fit">
+                <!-- Idle Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-300 p-6 flex flex-col justify-between">
+                    <span class="text-amber-400 font-mono text-[10px] font-bold tracking-wider px-2.5 py-1 rounded-md bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-sm w-fit">
                         [ PHOTO PRODUCT ]
                     </span>
-                    <div class="space-y-1">
-                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Glaze Craze 3D Loop</h3>
-                        <p class="text-zinc-400 text-xs font-mono">After Effects & Cinema 4D</p>
+                    <div>
+                        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block">COMMERCIAL MERCHANDISE</span>
+                        <h3 class="text-2xl font-serif italic text-zinc-100 font-normal">TEDS Product Showcase</h3>
                     </div>
                 </div>
-            </div>
 
-            <!-- ITEM 5: Landscape (Span 2 cols) -->
-            <div data-parallax="0.05" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-100 border border-zinc-200 shadow-xl transition-all duration-500 cursor-pointer lg:col-span-2" data-category="ads" data-project-id="automotive-showcase">
-                <img src="assets/katalog foto/wayang.JPG" alt="Automotive Showcase" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                <video class="project-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500" muted loop playsinline preload="metadata">
-                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4" type="video/mp4">
-                </video>
-                
-                <div class="absolute inset-0 bg-zinc-950/80 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-md p-8 flex flex-col justify-between z-10">
-                    <div class="flex justify-between items-start">
-                        <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800">
-                            [ DOCUMENTATIONS ]
+                <!-- Hover Overlay -->
+                <div class="absolute inset-0 bg-zinc-950/85 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between z-20">
+                    <div class="flex justify-between items-start transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800 shadow-md">
+                            [ PHOTO PRODUCT ] • CLICK TO VIEW
                         </span>
-                        <div class="w-8 h-8 rounded-full bg-amber-500 text-zinc-950 flex items-center justify-center">
+                        <div class="w-9 h-9 rounded-full bg-amber-500 text-zinc-950 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
                             <i data-lucide="play" class="w-4 h-4 fill-zinc-950 ml-0.5"></i>
                         </div>
                     </div>
-                    <div class="space-y-2">
-                        <span class="text-xs font-mono text-zinc-400 uppercase tracking-widest block">AUTOMOTIVE SHOWCASE</span>
-                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Forever King — Car Commercial</h3>
-                        <p class="text-zinc-400 text-xs font-mono">Fast-Paced Cutting & Dynamic SFX</p>
+                    <div class="space-y-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-xs font-mono text-amber-500 uppercase tracking-widest block font-semibold">COMMERCIAL MERCHANDISE</span>
+                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">TEDS Product Showcase</h3>
+                        <p class="text-zinc-400 text-xs font-mono">High-Contrast Studio Lighting & Texture Detail</p>
                     </div>
                 </div>
             </div>
 
-            <!-- ITEM 6: Square -->
-            <div data-parallax="-0.02" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-100 border border-zinc-200 shadow-xl transition-all duration-500 cursor-pointer" data-category="product" data-project-id="minimalist-shadows">
-                <img src="assets/katalog foto/DSC01179.JPG" alt="Minimalist Shadows" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <!-- ITEM 5: Landscape Documentations (Wayang/Cultural Event - Fixed Overlay) -->
+            <div data-parallax="0.05" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800/80 shadow-2xl transition-all duration-500 cursor-pointer lg:col-span-2" data-category="ads" data-project-id="automotive-showcase">
+                <img src="assets/katalog foto/wayang.JPG" alt="Event Documentations" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <video class="project-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 z-10" muted loop playsinline preload="metadata">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4" type="video/mp4">
+                </video>
                 
-                <div class="absolute inset-0 bg-zinc-950/80 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-md p-8 flex flex-col justify-between z-10">
-                    <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800 w-fit">
-                        [ EDITORIAL ]
+                <!-- Idle State Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-300 p-6 flex flex-col justify-between">
+                    <span class="text-amber-400 font-mono text-[10px] font-bold tracking-wider px-2.5 py-1 rounded-md bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-sm w-fit">
+                        [ DOCUMENTATIONS ]
                     </span>
-                    <div class="space-y-2">
-                        <span class="text-xs font-mono text-zinc-400 uppercase tracking-widest block">STILL LIFE</span>
-                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Minimalist Shadows</h3>
-                        <p class="text-zinc-400 text-xs font-mono">Color Grading & Film Print Simulation</p>
+                    <div>
+                        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block">CULTURE & LIVE EVENT</span>
+                        <h3 class="text-2xl font-serif italic text-zinc-100 font-normal">Wayang Performance Capture</h3>
+                    </div>
+                </div>
+
+                <!-- Hover Overlay -->
+                <div class="absolute inset-0 bg-zinc-950/85 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between z-20">
+                    <div class="flex justify-between items-start transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800 shadow-md">
+                            [ DOCUMENTATIONS ] • CLICK TO VIEW
+                        </span>
+                        <div class="w-9 h-9 rounded-full bg-amber-500 text-zinc-950 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                            <i data-lucide="play" class="w-4 h-4 fill-zinc-950 ml-0.5"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-xs font-mono text-amber-500 uppercase tracking-widest block font-semibold">CULTURE & LIVE EVENT</span>
+                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Wayang Performance Capture</h3>
+                        <p class="text-zinc-400 text-xs font-mono">Stage Event Coverage & Low-Light Performance</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM 6: Photographer Cutout / Otomotive Content (Fixed Overlay & Background) -->
+            <div data-parallax="-0.02" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-gradient-to-b from-zinc-800 to-zinc-950 border border-zinc-800/80 shadow-2xl transition-all duration-500 cursor-pointer" data-category="product" data-project-id="minimalist-shadows">
+                <img src="assets/Car/DSC02981.JPG" alt="Otomotive Content Creator" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter contrast-105">
+                
+                <!-- Idle State Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/30 to-transparent z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-300 p-6 flex flex-col justify-between">
+                    <span class="text-amber-400 font-mono text-[10px] font-bold tracking-wider px-2.5 py-1 rounded-md bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-sm w-fit">
+                        [ OTOMOTIVE ]
+                    </span>
+                    <div>
+                        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block">REELS & FEEDS</span>
+                        <h3 class="text-2xl font-serif italic text-zinc-100 font-normal">Otomotive Content</h3>
+                    </div>
+                </div>
+
+                <!-- Hover Overlay -->
+                <div class="absolute inset-0 bg-zinc-950/85 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between z-20">
+                    <div class="flex justify-between items-start transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800 shadow-md">
+                            [ OTOMOTIVE ] • CLICK TO VIEW
+                        </span>
+                        <div class="w-9 h-9 rounded-full bg-zinc-800 text-amber-400 flex items-center justify-center border border-zinc-700 shadow-lg">
+                            <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-xs font-mono text-amber-500 uppercase tracking-widest block font-semibold">REELS & FEEDS</span>
+                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Otomotive Content</h3>
+                        <p class="text-zinc-400 text-xs font-mono">Videographer, Editor & Colorist Workflow</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM 7: Landscape Graduation (Span 2 cols) -->
+            <div data-parallax="0.03" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800/80 shadow-2xl transition-all duration-500 cursor-pointer lg:col-span-2" data-category="product" data-project-id="graduation-moments">
+                <img src="assets/Wisuda/DSC01479.JPG" alt="Graduation Memories" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                
+                <!-- Idle State Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-300 p-6 flex flex-col justify-between">
+                    <span class="text-amber-400 font-mono text-[10px] font-bold tracking-wider px-2.5 py-1 rounded-md bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-sm w-fit">
+                        [ GRADUATION ]
+                    </span>
+                    <div>
+                        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block">MEMORIES & PORTRAIT</span>
+                        <h3 class="text-2xl font-serif italic text-zinc-100 font-normal">Graduation Memories</h3>
+                    </div>
+                </div>
+
+                <!-- Hover Overlay -->
+                <div class="absolute inset-0 bg-zinc-950/85 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between z-20">
+                    <div class="flex justify-between items-start transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800 shadow-md">
+                            [ GRADUATION ] • CLICK TO VIEW
+                        </span>
+                        <div class="w-9 h-9 rounded-full bg-zinc-800 text-amber-400 flex items-center justify-center border border-zinc-700 shadow-lg">
+                            <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-xs font-mono text-amber-500 uppercase tracking-widest block font-semibold">MEMORIES & PORTRAIT</span>
+                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Graduation Memories</h3>
+                        <p class="text-zinc-400 text-xs font-mono">Warm Tone & Editorial Group Portrait</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM 8: Square Graphic Design -->
+            <div data-parallax="-0.03" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800/80 shadow-2xl transition-all duration-500 cursor-pointer" data-category="motion" data-project-id="graphic-design">
+                <img src="assets/Car/thumbnail bmw m4 asettt.png" alt="Creative Graphic Design" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                
+                <!-- Idle State Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-300 p-6 flex flex-col justify-between">
+                    <span class="text-amber-400 font-mono text-[10px] font-bold tracking-wider px-2.5 py-1 rounded-md bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-sm w-fit">
+                        [ GRAPHIC DESIGN ]
+                    </span>
+                    <div>
+                        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block">DIGITAL POSTER & BRANDING</span>
+                        <h3 class="text-2xl font-serif italic text-zinc-100 font-normal">Creative Graphic Design</h3>
+                    </div>
+                </div>
+
+                <!-- Hover Overlay -->
+                <div class="absolute inset-0 bg-zinc-950/85 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between z-20">
+                    <div class="flex justify-between items-start transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800 shadow-md">
+                            [ GRAPHIC DESIGN ] • CLICK TO VIEW
+                        </span>
+                        <div class="w-9 h-9 rounded-full bg-zinc-800 text-amber-400 flex items-center justify-center border border-zinc-700 shadow-lg">
+                            <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-xs font-mono text-amber-500 uppercase tracking-widest block font-semibold">DIGITAL POSTER & BRANDING</span>
+                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Creative Graphic Design</h3>
+                        <p class="text-zinc-400 text-xs font-mono">Layout, Typography & Visual Identity</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ITEM 9: Full-Width / Span 3 Drone Aerial (Fixed Overlay & Video Preview) -->
+            <div data-parallax="0.04" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800/80 shadow-2xl transition-all duration-500 cursor-pointer lg:col-span-3 md:col-span-2" data-category="ads" data-project-id="drone-aerial">
+                <img src="assets/Travel/DSC00091.JPG" alt="Drone Aerial Perspective" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <video class="project-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 z-10" muted loop playsinline preload="metadata">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+                </video>
+                
+                <!-- Idle State Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-300 p-6 flex flex-col justify-between">
+                    <span class="text-amber-400 font-mono text-[10px] font-bold tracking-wider px-2.5 py-1 rounded-md bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-sm w-fit">
+                        [ DRONE AERIAL ]
+                    </span>
+                    <div>
+                        <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block">AERIAL CINEMATOGRAPHY</span>
+                        <h3 class="text-2xl font-serif italic text-zinc-100 font-normal">Cinematic Drone Perspectives</h3>
+                    </div>
+                </div>
+
+                <!-- Hover Overlay -->
+                <div class="absolute inset-0 bg-zinc-950/85 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 sm:p-8 flex flex-col justify-between z-20">
+                    <div class="flex justify-between items-start transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-amber-400 font-mono text-[11px] font-bold tracking-wider px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800 shadow-md">
+                            [ DRONE AERIAL ] • CLICK TO VIEW
+                        </span>
+                        <div class="w-9 h-9 rounded-full bg-amber-500 text-zinc-950 flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                            <i data-lucide="play" class="w-4 h-4 fill-zinc-950 ml-0.5"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <span class="text-xs font-mono text-amber-500 uppercase tracking-widest block font-semibold">AERIAL CINEMATOGRAPHY</span>
+                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Cinematic Drone Perspectives</h3>
+                        <p class="text-zinc-400 text-xs font-mono">4K Dynamic Aerial Motions & Scale</p>
                     </div>
                 </div>
             </div>
@@ -403,18 +642,21 @@
                     <h3 class="text-lg font-bold text-zinc-900">Visual Color Pass Comparison</h3>
                     <p class="text-zinc-600 text-sm">Geser slider di bawah untuk melihat transformasi warna dari profil LOG murni ke hasil <i>Final Film Print</i>.</p>
                     
-                    <div id="before-after-slider" class="relative aspect-video rounded-2xl overflow-hidden border border-zinc-300 select-none cursor-ew-resize shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover filter contrast-125 saturate-150" alt="Graded Pass">
-                        <span class="absolute top-3 right-3 bg-amber-500 text-zinc-950 text-[10px] font-mono font-bold px-2.5 py-1 rounded-md shadow z-10">GRADED</span>
+                    <div id="before-after-slider" class="relative aspect-video rounded-2xl overflow-hidden border border-zinc-300 select-none cursor-ew-resize shadow-xl touch-none">
+                        <!-- Bottom Layer: Graded Pass -->
+                        <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover filter contrast-125 saturate-150 pointer-events-none select-none" alt="Graded Pass" draggable="false">
+                        <span class="absolute top-3 right-3 bg-amber-500 text-zinc-950 text-[10px] font-mono font-bold px-2.5 py-1 rounded-md shadow z-10 pointer-events-none select-none">GRADED</span>
 
-                        <div id="before-image-wrap" class="absolute inset-y-0 left-0 w-1/2 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover filter brightness-125 saturate-50 contrast-75" alt="RAW Log Pass">
-                            <span class="absolute top-3 left-3 bg-zinc-800 text-zinc-200 text-[10px] font-mono font-bold px-2.5 py-1 rounded-md shadow border border-zinc-700 z-10">RAW LOG</span>
+                        <!-- Top Layer: RAW Log Pass -->
+                        <div id="before-image-wrap" class="absolute inset-0 w-full h-full pointer-events-none select-none" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+                            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover filter brightness-125 saturate-50 contrast-75 pointer-events-none select-none" alt="RAW Log Pass" draggable="false">
                         </div>
+                        <span class="absolute top-3 left-3 bg-zinc-800 text-zinc-200 text-[10px] font-mono font-bold px-2.5 py-1 rounded-md shadow border border-zinc-700 z-10 pointer-events-none select-none">RAW LOG</span>
 
-                        <div id="slider-handle" class="absolute inset-y-0 left-1/2 w-0.5 bg-amber-500 flex items-center justify-center z-20">
-                            <div class="w-7 h-7 rounded-full bg-amber-500 text-zinc-950 flex items-center justify-center shadow-lg text-xs font-bold">
-                                ↔
+                        <!-- Draggable CTA Divider Handle -->
+                        <div id="slider-handle" class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-amber-400 flex items-center justify-center z-20 pointer-events-none shadow-[0_0_12px_rgba(0,0,0,0.6)]">
+                            <div class="w-8 h-8 rounded-full bg-amber-500 text-zinc-950 flex items-center justify-center shadow-xl border-2 border-white select-none">
+                                <i data-lucide="chevrons-left-right" class="w-4 h-4 stroke-[2.5]"></i>
                             </div>
                         </div>
                     </div>
@@ -550,8 +792,8 @@
                 </p>
             </div>
 
-            <!-- Gallery Grid (Menampilkan Foto/Video Tambahan Proyek) -->
-            <div id="modal-gallery" class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6 max-h-[60vh] overflow-y-auto pr-2">
+            <!-- Gallery Masonry (Menjaga Rasio Asli Foto/Video Tanpa Dipaksa / Dicrop) -->
+            <div id="modal-gallery" class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6 max-h-[65vh] overflow-y-auto pr-2 items-start">
                 <!-- Konten Foto & Video tambahan akan diisi otomatis lewat JS -->
             </div>
 
@@ -596,7 +838,6 @@
 
         // Audio Player Toggle
         const playBtn = document.getElementById('play-btn');
-        const playIcon = document.getElementById('play-icon');
         const vinylLeft = document.getElementById('vinyl-left');
         let isPlaying = false;
 
@@ -604,10 +845,10 @@
             playBtn.addEventListener('click', () => {
                 isPlaying = !isPlaying;
                 if (isPlaying) {
-                    playIcon.setAttribute('data-lucide', 'pause');
+                    playBtn.innerHTML = '<i data-lucide="pause" class="w-4 h-4 fill-zinc-950"></i>';
                     vinylLeft.classList.add('animate-spin-slow');
                 } else {
-                    playIcon.setAttribute('data-lucide', 'play');
+                    playBtn.innerHTML = '<i data-lucide="play" class="w-4 h-4 fill-zinc-950 ml-0.5"></i>';
                     vinylLeft.classList.remove('animate-spin-slow');
                 }
                 lucide.createIcons();
@@ -646,7 +887,7 @@
                 const filterValue = btn.getAttribute('data-filter');
                 projectCards.forEach(card => {
                     if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                        card.style.display = 'block';
+                        card.style.display = '';
                     } else {
                         card.style.display = 'none';
                     }
@@ -661,102 +902,185 @@
 
         if (slider && beforeImageWrap && sliderHandle) {
             let isSliding = false;
-            const updateSlider = (x) => {
+            let rafId = null;
+
+            const updateSlider = (clientX) => {
                 const rect = slider.getBoundingClientRect();
-                let position = (x - rect.left) / rect.width;
+                let position = (clientX - rect.left) / rect.width;
                 if (position < 0) position = 0;
                 if (position > 1) position = 1;
 
-                const percentage = position * 100;
-                beforeImageWrap.style.width = `${percentage}%`;
-                sliderHandle.style.left = `${percentage}%`;
+                const percentage = (position * 100).toFixed(2);
+                if (rafId) cancelAnimationFrame(rafId);
+                rafId = requestAnimationFrame(() => {
+                    beforeImageWrap.style.clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+                    sliderHandle.style.left = `${percentage}%`;
+                });
             };
 
-            slider.addEventListener('mousedown', (e) => { isSliding = true; updateSlider(e.clientX); });
-            window.addEventListener('mouseup', () => { isSliding = false; });
-            window.addEventListener('mousemove', (e) => { if (isSliding) updateSlider(e.clientX); });
-            slider.addEventListener('touchstart', (e) => { isSliding = true; updateSlider(e.touches[0].clientX); });
-            window.addEventListener('touchend', () => { isSliding = false; });
-            window.addEventListener('touchmove', (e) => { if (isSliding) updateSlider(e.touches[0].clientX); });
+            const startSlide = (e) => {
+                isSliding = true;
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                updateSlider(clientX);
+            };
+
+            const stopSlide = () => {
+                isSliding = false;
+            };
+
+            const moveSlide = (e) => {
+                if (!isSliding) return;
+                if (e.cancelable) e.preventDefault();
+                const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                updateSlider(clientX);
+            };
+
+            slider.addEventListener('mousedown', startSlide);
+            window.addEventListener('mouseup', stopSlide);
+            window.addEventListener('mousemove', moveSlide);
+
+            slider.addEventListener('touchstart', startSlide, { passive: true });
+            window.addEventListener('touchend', stopSlide);
+            window.addEventListener('touchmove', moveSlide, { passive: false });
         }
 
         // --- LOGIKA MODAL DETAIL PORTFOLIO ---
         const modal = document.getElementById('portfolio-modal');
         const closeModalBtn = document.getElementById('close-modal-btn');
 
-        // Data galeri lengkap per proyek (disesuaikan dengan 6 item gallery HTML)
         const projectData = {
             "urban-commercial": {
-                title: "Urban Commercial",
+                title: "Clip Ads Campaign",
                 category: "VIDEO ADS",
                 desc: "Kampanye visual komersial perkotaan dengan pendekatan editorial color grading dan pacing dinamis untuk meningkatkan engagement serta konversi audiens.",
                 tools: "Premiere Pro, DaVinci Resolve",
                 gallery: [
-                    { type: "video", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" },
-                    { type: "image", src: "https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80" },
-                    { type: "image", src: "ASSET PORTO/Street/DSC00855.JPG" },
-                    { type: "image", src: "ASSET PORTO/Street/DSC00959.JPG" }
+                    { type: "video", src: "assets/videos/goobirfull.webm" },
+                    { type: "video", src: "assets/Car/cartesbrutal.webm" },
+                    { type: "image", src: "assets/Street/DSC00855.JPG" },
+                    { type: "image", src: "assets/Street/DSC00959.JPG" },
+                    { type: "image", src: "assets/Street/DSC00826.JPG" }
                 ]
             },
             "fashion-editorial": {
-                title: "Velvet Vogue",
-                category: "PORTRAIT EDITORIAL",
+                title: "Fashion Portrait",
+                category: "PORTRAIT FASHION",
                 desc: "Eksplorasi tata cahaya studio dan tone warna sinematik untuk pemotretan high fashion, menonjolkan tekstur pakaian dan ekspresi model secara mendalam.",
                 tools: "Sony A7IV, Studio Lighting, Lightroom, Photoshop",
                 gallery: [
+                    { type: "video", src: "assets/videos/dline outpit nongkrong clip.mp4" },
                     { type: "image", src: "assets/katalog foto/portrait editorial.jpg" },
-                    { type: "image", src: "ASSET PORTO/Portrait/DSC09535.JPG" },
-                    { type: "image", src: "ASSET PORTO/Portrait/DSC07379.jpeg" },
-                    { type: "image", src: "ASSET PORTO/Portrait/DSC07365.jpeg" }
+                    { type: "image", src: "assets/Portrait/DSC07365.jpeg" },
+                    { type: "image", src: "assets/Portrait/DSC07379.jpeg" },
+                    { type: "image", src: "assets/Portrait/DSC07374.jpeg" },
+                    { type: "image", src: "assets/Portrait/DSC09535.JPG" },
+                    { type: "video", src: "assets/Portrait/clip_dline.webm" }
                 ]
             },
             "nonfiction-perfume": {
-                title: "NONFICTION Perfume",
+                title: "Limasegi Dipinus",
                 category: "F&B PHOTOS",
-                desc: "Still life photography dan fragrance commercial dengan komposisi minimalis di alam terbuka, mengedepankan tone warna hangat dan estetika organik.",
-                tools: "Sony A7IV, 85mm F1.4, Natural Light, Lightroom",
+                desc: "Dokumentasi kuliner dan suasana cafe outdoor dengan pencahayaan alami di area Hutan Pinus Limasegi.",
+                tools: "Sony A7IV, FE 35mm F1.4 GM, Natural Light, Lightroom",
                 gallery: [
+                    { type: "video", src: "assets/F&B/limasegi1.webm" },
+                    { type: "video", src: "assets/F&B/limasegi2.webm" },
+                    { type: "image", src: "assets/F&B/limasegi1.jpg" },
+                    { type: "image", src: "assets/F&B/limasegi2.jpg" },
+                    { type: "image", src: "assets/F&B/limasegi3.jpg" },
                     { type: "image", src: "assets/katalog foto/limasegidipinus.jpg" },
                     { type: "image", src: "assets/katalog foto/dough deli.JPG" },
-                    { type: "image", src: "ASSET PORTO/F&B/DSC05621.JPG" },
-                    { type: "image", src: "ASSET PORTO/F&B/DSC05490.JPG" }
+                    { type: "image", src: "assets/F&B/DSC05621.JPG" },
+                    { type: "image", src: "assets/F&B/DSC05490.JPG" },
+                    { type: "image", src: "assets/F&B/DSC05607.JPG" },
+                    { type: "image", src: "assets/F&B/DSC05609.JPG" }
                 ]
             },
             "glaze-craze": {
-                title: "Glaze Craze 3D Loop",
+                title: "TEDS Product Showcase",
                 category: "PHOTO PRODUCT",
-                desc: "Simulasi 3D motion loop dan fotografi produk komersial dengan pencahayaan glossy modern untuk materi promosi digital dan visual media sosial.",
-                tools: "After Effects, Cinema 4D, Premiere Pro",
+                desc: "Fotografi produk komersial dengan pencahayaan kontras tinggi studio untuk kebutuhan materi promosi e-commerce.",
+                tools: "Sony A7IV, Studio Lighting, Photoshop, Lightroom",
                 gallery: [
                     { type: "video", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" },
-                    { type: "image", src: "ASSET PORTO/Foto Produk/TEDS PRODUK.jpeg" },
-                    { type: "image", src: "ASSET PORTO/Foto Produk/DSC00116.JPG" },
-                    { type: "image", src: "ASSET PORTO/Foto Produk/DSC00224.JPG" }
+                    { type: "image", src: "assets/Foto Produk/TEDS PRODUK.jpeg" },
+                    { type: "image", src: "assets/Foto Produk/DSC00116.JPG" },
+                    { type: "image", src: "assets/Foto Produk/DSC00224.JPG" },
+                    { type: "image", src: "assets/Foto Produk/DSC00170.JPG" },
+                    { type: "image", src: "assets/Foto Produk/DSC00150.JPG" }
                 ]
             },
             "automotive-showcase": {
-                title: "Forever King — Car Commercial",
+                title: "Wayang Performance Capture",
                 category: "DOCUMENTATIONS",
-                desc: "Showcase otomotif dan dokumentasi video bertempo cepat dengan sinkronisasi frame presisi, dynamic speed ramping, dan sound design agresif.",
-                tools: "DaVinci Resolve, Premiere Pro, Dynamic SFX",
+                desc: "Dokumentasi pertunjukan seni budaya wayang dengan komposisi pencahayaan panggung kontras dan nuansa naratif sinematik.",
+                tools: "Sony A7IV, 85mm F1.8, Lightroom, DaVinci Resolve",
                 gallery: [
-                    { type: "video", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4" },
+                    { type: "image", src: "assets/Documentation/DSC00810.JPG" },
                     { type: "image", src: "assets/katalog foto/wayang.JPG" },
-                    { type: "image", src: "ASSET PORTO/Car/KKK04853.jpeg" },
-                    { type: "image", src: "ASSET PORTO/Car/THUMBNAIL SUBARU BRZ.png" },
-                    { type: "image", src: "ASSET PORTO/Car/xforce thumbnail.png" }
+                    { type: "image", src: "assets/Documentation/DSC02931.JPG" },
+                    { type: "image", src: "assets/Documentation/DSC00707.JPG" },
+                    { type: "image", src: "assets/Documentation/DSC04286.JPG" },
+                    { type: "image", src: "assets/katalog foto/debat publik.JPG" },
+                    { type: "image", src: "assets/Documentation/DSC08379.JPG" },
+                    { type: "image", src: "assets/Documentation/DSC08380.JPG" }
                 ]
             },
             "minimalist-shadows": {
-                title: "Minimalist Shadows",
-                category: "EDITORIAL",
-                desc: "Eksplorasi still life photography dengan permainan hard shadows kontras dan simulasi film print klasik untuk nuansa editorial yang timeless.",
-                tools: "Sony A7IV, Dehancer Pro, DaVinci Resolve, Lightroom",
+                title: "Otomotive Content",
+                category: "OTOMOTIVE",
+                desc: "Produksi konten visual otomotif untuk reels dan feeds sosial media, menggabungkan pengambilan gambar sinematik serta color grading bergaya modern.",
+                tools: "Sony A7IV, DaVinci Resolve, Premiere Pro",
                 gallery: [
-                    { type: "image", src: "assets/katalog foto/DSC01179.JPG" },
-                    { type: "image", src: "assets/katalog foto/DSC00224.JPG" },
-                    { type: "image", src: "assets/katalog foto/debat publik.JPG" },
-                    { type: "image", src: "ASSET PORTO/Documentation/DSC04286.JPG" }
+                    { type: "video", src: "assets/Car/bmwm3.webm" },
+                    { type: "video", src: "assets/Car/testbaretunik.webm" },
+                    { type: "image", src: "assets/Car/KKK04853.jpeg" },
+                    { type: "image", src: "assets/Car/THUMBNAIL SUBARU BRZ.png" },
+                    { type: "image", src: "assets/Car/xforce thumbnail.png" },
+                    { type: "image", src: "assets/Car/DSC02981.JPG" }
+                ]
+            },
+            "graduation-moments": {
+                title: "Graduation Memories",
+                category: "GRADUATION",
+                desc: "Dokumentasi momen kelulusan dan wisuda dengan pencahayaan alami, komposisi elegan, serta sentuhan tone warna hangat dan emosional.",
+                tools: "Sony A7IV, 50mm F1.4, Adobe Lightroom, Photoshop",
+                gallery: [
+                    { type: "image", src: "assets/Wisuda/DSC01479.JPG" },
+                    { type: "image", src: "assets/Wisuda/DSC00236.JPG" },
+                    { type: "image", src: "assets/Wisuda/DSC00234.JPG" },
+                    { type: "image", src: "assets/Wisuda/DSC00230.JPG" },
+                    { type: "image", src: "assets/Wisuda/95789F09-1602-4BC3-8EDB-97C8D69A8DD3_4.jpg" },
+                    { type: "image", src: "assets/Wisuda/C3838A72-A9F6-4E07-816E-E78565BCA922_4.jpg" },
+                    { type: "image", src: "assets/Wisuda/5065EBD0-5D8F-405A-8747-51892EA9A240_1_105_c.jpg" },
+                    { type: "image", src: "assets/Wisuda/togaloncat.JPG" },
+                    { type: "image", src: "assets/Wisuda/togapov.JPG" }
+                ]
+            },
+            "graphic-design": {
+                title: "Creative Graphic Design",
+                category: "GRAPHIC DESIGN",
+                desc: "Eksplorasi desain grafis digital, typography, layout poster modern, dan visual branding identity untuk media promosi komersial.",
+                tools: "Adobe Photoshop, Illustrator, Figma",
+                gallery: [
+                    { type: "image", src: "assets/Car/thumbnail bmw m4 asettt.png" },
+                    { type: "image", src: "assets/Car/THUMBNAIL SUBARU BRZ.png" },
+                    { type: "image", src: "assets/Car/supra thumbnail coating.png" },
+                    { type: "image", src: "assets/Car/xforce thumbnail.png" },
+                    { type: "image", src: "assets/Car/thumbnail hyptec.png" },
+                    { type: "image", src: "assets/Car/tiggo 9_thumbnail.png" },
+                    { type: "image", src: "assets/Car/supra 1.png" }
+                ]
+            },
+            "drone-aerial": {
+                title: "Cinematic Drone Perspectives",
+                category: "DRONE AERIAL",
+                desc: "Pengambilan gambar udara resolusi tinggi 4K dengan pergerakan kamera sinematik untuk landscape scale, commercial visual ads, dan environmental context.",
+                tools: "DJI Mavic / Air Series, Premiere Pro, DaVinci Resolve",
+                gallery: [
+                    { type: "video", src: "" },
+                    { type: "image", src: "assets/Travel/DSC00091.JPG" },
+                    { type: "image", src: "" }
                 ]
             }
         };
@@ -764,41 +1088,49 @@
         // Pasang Event Listener pada setiap kartu portofolio
         document.querySelectorAll('.project-card').forEach(card => {
             card.addEventListener('click', () => {
-                // Ambil ID / kategori unik (misal buat attribute data-project-id pada item)
                 const projectId = card.getAttribute('data-project-id') || 'urban-commercial';
                 const data = projectData[projectId] || projectData["urban-commercial"];
 
-                // Isi konten modal
                 document.getElementById('modal-title').textContent = data.title;
                 document.getElementById('modal-category').textContent = `[ ${data.category} ]`;
                 document.getElementById('modal-desc').textContent = data.desc;
                 document.getElementById('modal-tools').textContent = data.tools;
 
-                // Render galeri foto & video tambahan
                 const galleryContainer = document.getElementById('modal-gallery');
-                galleryContainer.innerHTML = ''; // bersihkan galeri sebelumnya
+                
+                // Buat 2 Wadah Kolom Mandiri untuk Mencegah Clipping CSS Column
+                galleryContainer.innerHTML = `
+                    <div id="gallery-col-1" class="flex flex-col gap-4 w-full"></div>
+                    <div id="gallery-col-2" class="flex flex-col gap-4 w-full"></div>
+                `;
 
-                data.gallery.forEach(item => {
+                const col1 = document.getElementById('gallery-col-1');
+                const col2 = document.getElementById('gallery-col-2');
+
+                // Distribusikan media secara berselang-seling (Kiri - Kanan - Kiri - Kanan)
+                data.gallery.forEach((item, index) => {
+                    const targetCol = (index % 2 === 0) ? col1 : col2;
+
                     if (item.type === 'video') {
-                        galleryContainer.innerHTML += `
-                            <div class="rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950 aspect-video">
-                                <video controls class="w-full h-full object-cover">
-                                    <source src="${item.src}" type="video/mp4">
+                        targetCol.innerHTML += `
+                            <div class="rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950 shadow-lg w-full">
+                                <video controls playsinline preload="metadata" class="w-full h-auto block bg-black">
+                                    <source src="${item.src}">
+                                    Browser Anda tidak mendukung tag video.
                                 </video>
                             </div>
                         `;
                     } else {
-                        galleryContainer.innerHTML += `
-                            <div class="rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950">
-                                <img src="${item.src}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                        targetCol.innerHTML += `
+                            <div class="rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950 shadow-lg group w-full">
+                                <img src="${item.src}" alt="${data.title}" class="w-full h-auto block object-contain transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy">
                             </div>
                         `;
                     }
                 });
 
-                // Tampilkan modal
                 modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Kunci scroll halaman
+                document.body.style.overflow = 'hidden';
                 lucide.createIcons();
             });
         });
@@ -807,13 +1139,20 @@
         const closeModal = () => {
             modal.classList.add('hidden');
             document.body.style.overflow = 'auto';
-            // Hentikan video saat modal ditutup
-            document.querySelectorAll('#modal-gallery video').forEach(v => v.pause());
+            document.querySelectorAll('#modal-gallery video').forEach(v => {
+                v.pause();
+                v.currentTime = 0;
+            });
         };
 
         closeModalBtn.addEventListener('click', closeModal);
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
+        });
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
         });
     </script>
 </body>
