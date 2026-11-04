@@ -122,6 +122,17 @@
         #modal-gallery::-webkit-scrollbar-thumb:hover {
             background: #f59e0b;
         }
+        /* PROTEKSI MEDIA GLOBAL (Mematikan Long-Press, Seleksi, & Drag di HP/Desktop) */
+        img, video, iframe, .project-card {
+            -webkit-touch-callout: none !important; /* Mematikan popup menu long-press Android & iOS */
+            -webkit-user-select: none !important;
+            -khtml-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+            -webkit-user-drag: none !important;     /* Mematikan fitur drag gambar/video */
+            -webkit-tap-highlight-color: transparent !important;
+        }
     </style>
 </head>
 <body class="bg-white text-zinc-900 font-sans antialiased selection:bg-amber-500 selection:text-white overflow-x-hidden min-h-screen">
@@ -181,7 +192,7 @@
                 </div>
 
                 <h1 class="text-4xl sm:text-6xl lg:text-7xl font-sans font-bold leading-[1.08] text-zinc-900 tracking-tight">
-                    Multi <span class="font-serif italic text-amber-500 font-normal">disiplinary</span> Visual Creative: <span class="font-serif italic text-zinc-500 font-normal">Photography, Videography, Editing, & Graphic Design</span>
+                    Visual Storyteller<span class="font-serif italic text-amber-500 font-normal">&</span> Video Editor: <span class="font-serif italic text-zinc-500 font-normal">Color Grading, Editing, & Commercial Media</span>
                 </h1>
 
                 <!-- Audio Player Widget -->
@@ -209,7 +220,7 @@
                 </div>
 
                 <p class="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-xl font-normal">
-                    Berlatar belakang Desain Komunikasi Visual dengan fokus pada penciptaan narasi visual yang presisi. Mengombinasikan <i>editorial color grading</i>, <i>fast-paced motion ads</i>, dan optimasi performa antarmuka visual.
+                    Desainer Komunikasi Visual yang berfokus pada tangkapan sinematografi, framing visual, dan pengarahan kamera di lapangan. Mengombinasikan keahlian <i>visual on-set</i>, dengan pascaproduksi <i>editing, color grading</i>, dan <i>motion design</i>, untuk menghadirkan narasi iklan serta konten promo yang berdampak.
                 </p>
 
                 <div class="flex flex-wrap items-center gap-4 pt-2">
@@ -217,7 +228,7 @@
                         <span>Explore Work</span>
                         <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
                     </a>
-                    <a href="assets/CV Sulthan Aulia 2025.pdf" download="CV Sulthan Aulia 2025.pdf" target="_blank" class="px-7 py-3.5 rounded-full glass-card-light hover:bg-zinc-100 text-zinc-800 font-semibold text-sm border border-zinc-200 flex items-center gap-2 transition-all hover:scale-105 active:scale-95 shadow-sm">
+                    <a href="assets/CV-Sulthan-Aulia-2026.pdf" download="CV Sulthan Aulia 2025.pdf" target="_blank" class="px-7 py-3.5 rounded-full glass-card-light hover:bg-zinc-100 text-zinc-800 font-semibold text-sm border border-zinc-200 flex items-center gap-2 transition-all hover:scale-105 active:scale-95 shadow-sm">
                         <i data-lucide="download" class="w-4 h-4"></i>
                         <span>Download CV</span>
                     </a>
@@ -291,14 +302,14 @@
             </h2>
 
             <p class="text-xs sm:text-sm font-mono text-zinc-500 tracking-widest uppercase">
-                「 EXTENDED COMMERCIAL GALLERY • DIGITAL ADS • MOTION & PRODUCT VISUALS 」
+                「 COMMERCIAL VIDEO ADS • DIGITAL ADS • MOTION & PRODUCT VISUALS 」
             </p>
 
             <div class="flex flex-wrap justify-center items-center gap-2 pt-6 text-xs font-mono" id="filter-tabs">
                 <button class="filter-btn active px-5 py-2.5 rounded-full glass-pill text-amber-600 border border-amber-500/50 font-bold transition-all shadow-md bg-amber-50/50" data-filter="all">All Works</button>
-                <button class="filter-btn px-5 py-2.5 rounded-full glass-pill text-zinc-600 hover:text-zinc-900 hover:border-zinc-300 transition-all" data-filter="ads">Video Ads</button>
+                <button class="filter-btn px-5 py-2.5 rounded-full glass-pill text-zinc-600 hover:text-zinc-900 hover:border-zinc-300 transition-all" data-filter="ads">Commercial Video</button>
                 <button class="filter-btn px-5 py-2.5 rounded-full glass-pill text-zinc-600 hover:text-zinc-900 hover:border-zinc-300 transition-all" data-filter="motion">Motion & Graphics</button>
-                <button class="filter-btn px-5 py-2.5 rounded-full glass-pill text-zinc-600 hover:text-zinc-900 hover:border-zinc-300 transition-all" data-filter="product">Product & Editorial</button>
+                <button class="filter-btn px-5 py-2.5 rounded-full glass-pill text-zinc-600 hover:text-zinc-900 hover:border-zinc-300 transition-all" data-filter="product">Brand & Product Photo</button>
             </div>
         </div>
 
@@ -412,7 +423,7 @@
                     </div>
                     <div class="space-y-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                         <span class="text-xs font-mono text-amber-500 uppercase tracking-widest block font-semibold">CULINARY & OUTDOOR</span>
-                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Limasegi Dipinus</h3>
+                        <h3 class="text-3xl font-serif italic text-zinc-100 font-normal">Cafe & Bakery</h3>
                         <p class="text-zinc-400 text-xs font-mono">Warm Culinary Shots & Pine Forest Mood</p>
                     </div>
                 </div>
@@ -432,7 +443,7 @@
                     </span>
                     <div>
                         <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block">COMMERCIAL MERCHANDISE</span>
-                        <h3 class="text-2xl font-serif italic text-zinc-100 font-normal">TEDS Product Showcase</h3>
+                        <h3 class="text-2xl font-serif italic text-zinc-100 font-normal">Product Showcase</h3>
                     </div>
                 </div>
 
@@ -468,7 +479,7 @@
                     </span>
                     <div>
                         <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest block">CULTURE & LIVE EVENT</span>
-                        <h3 class="text-2xl font-serif italic text-zinc-100 font-normal">Wayang Performance Capture</h3>
+                        <h3 class="text-2xl font-serif italic text-zinc-100 font-normal">Documentation & Performance Capture</h3>
                     </div>
                 </div>
 
@@ -525,7 +536,7 @@
 
             <!-- ITEM 7: Landscape Graduation (Span 2 cols) -->
             <div data-parallax="0.03" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800/80 shadow-2xl transition-all duration-500 cursor-pointer lg:col-span-2" data-category="product" data-project-id="graduation-moments">
-                <img src="assets/Wisuda/DSC01479 (1).jpg" alt="Graduation Memories" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <img src="assets/Wisuda/DSC01479-edit.jpg" alt="Graduation Memories" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 
                 <!-- Idle State Overlay -->
                 <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-300 p-6 flex flex-col justify-between">
@@ -558,7 +569,7 @@
 
             <!-- ITEM 8: Square Graphic Design -->
             <div data-parallax="-0.03" class="project-card parallax-layer relative group overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800/80 shadow-2xl transition-all duration-500 cursor-pointer" data-category="motion" data-project-id="graphic-design">
-                <img src="assets/Car/thumbnail bmw m4 asettt.png" alt="Creative Graphic Design" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <img src="assets/grafis/padepokan-jugala-thumb.png" alt="Creative Graphic Design" class="project-img w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 
                 <!-- Idle State Overlay -->
                 <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/20 to-transparent z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-300 p-6 flex flex-col justify-between">
@@ -640,16 +651,16 @@
                 
                 <div class="space-y-4">
                     <h3 class="text-lg font-bold text-zinc-900">Visual Color Pass Comparison</h3>
-                    <p class="text-zinc-600 text-sm">Geser slider di bawah untuk melihat transformasi warna dari profil LOG murni ke hasil <i>Final Film Print</i>.</p>
+                    <p class="text-zinc-600 text-sm">Eksperimen transformasi warna dari profil LOG murni ke hasil.</p>
                     
                     <div id="before-after-slider" class="relative aspect-video rounded-2xl overflow-hidden border border-zinc-300 select-none cursor-ew-resize shadow-xl touch-none">
                         <!-- Bottom Layer: Graded Pass -->
-                        <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover filter contrast-125 saturate-150 pointer-events-none select-none" alt="Graded Pass" draggable="false">
+                        <img src="assets/Wisuda/DSC01479-edit.jpg" class="absolute inset-0 w-full h-full object-cover filter contrast-100 saturate-100 pointer-events-none select-none" alt="Graded Pass" draggable="false">
                         <span class="absolute top-3 right-3 bg-amber-500 text-zinc-950 text-[10px] font-mono font-bold px-2.5 py-1 rounded-md shadow z-10 pointer-events-none select-none">GRADED</span>
 
                         <!-- Top Layer: RAW Log Pass -->
                         <div id="before-image-wrap" class="absolute inset-0 w-full h-full pointer-events-none select-none" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
-                            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover filter brightness-125 saturate-50 contrast-75 pointer-events-none select-none" alt="RAW Log Pass" draggable="false">
+                            <img src="assets/Wisuda/DSC01479.JPG" class="absolute inset-0 w-full h-full object-cover filter brightness-125 saturate-50 contrast-75 pointer-events-none select-none" alt="RAW Log Pass" draggable="false">
                         </div>
                         <span class="absolute top-3 left-3 bg-zinc-800 text-zinc-200 text-[10px] font-mono font-bold px-2.5 py-1 rounded-md shadow border border-zinc-700 z-10 pointer-events-none select-none">RAW LOG</span>
 
@@ -685,9 +696,9 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-6 space-y-6">
                 <h2 class="text-xs font-mono text-amber-600 tracking-widest uppercase font-bold">// ABOUT ME</h2>
-                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900">Menghubungkan Estetika Visual & Efektivitas Komunikasi.</h3>
+                <h3 class="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900">Mengintegrasikan Narasi Visual, Ritme Video, dan Strategi Komunikasi.</h3>
                 <p class="text-zinc-600 leading-relaxed text-sm sm:text-base">
-                    Sebagai lulusan Desain Komunikasi Visual, saya percaya bahwa video editor bukan sekadar memotong klip, melainkan menyusun emosi dan ritme agar pesan bisnis tersampaikan secara optimal.
+                    Sebagai lulusan Desain Komunikasi Visual (S.Ds), saya melihat video editing dan motion design bukan sekadar memotong klip, melainkan seni menyusun ritme, emosi, dan identitas visual. Berbekal pengalaman dari alur produksi studio, pengoperasian kamera, hingga pascaproduksi di DaVinci Resolve & After Effects, saya menghadirkan karya visual yang presisi, komunikatif, dan berdampak bagi brand maupun penonton.
                 </p>
                 <div class="grid grid-cols-2 gap-4 font-mono text-xs pt-2">
                     <div class="p-4 rounded-2xl glass-card-light border border-zinc-200 shadow-sm">
@@ -727,7 +738,7 @@
                     </div>
                     <div>
                         <div class="flex justify-between mb-1.5 text-zinc-600">
-                            <span>Color Grading (DaVinci Resolve)</span>
+                            <span>Color Grading (DaVinci / Lightroom)</span>
                             <span class="text-amber-600">90%</span>
                         </div>
                         <div class="w-full bg-zinc-200 rounded-full h-1.5 border border-zinc-300">
@@ -743,17 +754,17 @@
     <footer id="contact" class="py-24 px-6 bg-zinc-50 border-t border-zinc-200 relative overflow-hidden z-20">
         <div class="max-w-5xl mx-auto text-center space-y-8 relative z-10">
             <span class="text-xs font-mono text-amber-600 tracking-widest uppercase font-bold">// READY TO COLLABORATE</span>
-            <h2 class="text-4xl sm:text-6xl font-black text-zinc-900 tracking-tight">Let's build ads that scale your brand.</h2>
+            <h2 class="text-4xl sm:text-6xl font-black text-zinc-900 tracking-tight">Let's create visuals that move your audience.</h2>
             <p class="text-zinc-600 max-w-xl mx-auto text-sm sm:text-base">
-                Siap meningkatkan konversi visual produk Anda? Mari berdiskusi tentang proyek Anda berikutnya.
+                Mari Berkolaborasi.
             </p>
             
             <div class="flex flex-wrap justify-center items-center gap-4 pt-4">
-                <a href="mailto:sulthan.aulia@example.com" class="px-8 py-4 rounded-full bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold text-sm flex items-center gap-3 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-amber-500/20">
+                <a href="mailto:sultanaulia237@gmail.com" class="px-8 py-4 rounded-full bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold text-sm flex items-center gap-3 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-amber-500/20">
                     <i data-lucide="mail" class="w-4 h-4"></i>
                     <span>Send Email</span>
                 </a>
-                <a href="https://wa.me/" target="_blank" class="px-8 py-4 rounded-full glass-card-light hover:bg-zinc-100 text-zinc-800 font-bold text-sm flex items-center gap-3 border border-zinc-300 transition-all hover:scale-105 active:scale-95 shadow-sm">
+                <a href="https://wa.me/89676923679" target="_blank" class="px-8 py-4 rounded-full glass-card-light hover:bg-zinc-100 text-zinc-800 font-bold text-sm flex items-center gap-3 border border-zinc-300 transition-all hover:scale-105 active:scale-95 shadow-sm">
                     <i data-lucide="message-square" class="w-4 h-4 text-emerald-600"></i>
                     <span>WhatsApp</span>
                 </a>
@@ -762,9 +773,8 @@
             <div class="pt-16 border-t border-zinc-200 flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-zinc-500 gap-4">
                 <p>© 2026 Sulthan Aulia. All Rights Reserved.</p>
                 <div class="flex items-center space-x-6">
-                    <a href="#" class="hover:text-amber-600 transition-colors">Instagram</a>
-                    <a href="#" class="hover:text-amber-600 transition-colors">LinkedIn</a>
-                    <a href="#" class="hover:text-amber-600 transition-colors">YouTube</a>
+                    <a href="https://www.instagram.com/sultanulia/" class="hover:text-amber-600 transition-colors">Instagram</a>
+                    <a href="www.linkedin.com/in/sulthan-aulia" class="hover:text-amber-600 transition-colors">LinkedIn</a>
                 </div>
             </div>
         </div>
@@ -839,6 +849,16 @@
                 window.requestAnimationFrame(updateParallax);
                 ticking = true;
             }
+        });
+
+        // Memblokir Klik Kanan & Long-Press di Seluruh Halaman (Termasuk Elemen Dinamis Modal)
+        ['contextmenu', 'dragstart'].forEach(eventType => {
+            document.addEventListener(eventType, function (e) {
+                if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+                    e.preventDefault();
+                    return false;
+                }
+            }, true);
         });
 
         // Audio Player Toggle
@@ -957,37 +977,45 @@
             "urban-commercial": {
                 title: "Clip Ads Campaign",
                 category: "VIDEO ADS",
-                desc: "Kampanye visual komersial perkotaan dengan pendekatan editorial color grading dan pacing dinamis untuk meningkatkan engagement serta konversi audiens.",
+                desc: "Kampanye visual komersial dengan color grading dan pacing dinamis untuk meningkatkan engagement serta konversi audiens.",
                 tools: "Premiere Pro, DaVinci Resolve",
                 gallery: [
                     { type: "video", src: "assets/videos/goobirfull.webm" },
                     { type: "video", src: "assets/Car/cartesbrutal.webm" },
                     { type: "youtube", src: "https://www.youtube.com/embed/ZQGoj-Gj9bk?rel=0&modestbranding=1" },
-                    { type: "image", src: "assets/Street/DSC00855.JPG" },
-                    { type: "image", src: "assets/Street/DSC00959.JPG" },
-                    { type: "image", src: "assets/Street/DSC00826.JPG" }
+                    { type: "video", src: "assets/videos/missuniverse-reels.webm" },
+                    { type: "image", src: "assets/videos/20250927-DSC02819.JPG" },
+                    { type: "image", src: "assets/videos/20250927-DSC02860.JPG" },
+                    { type: "image", src: "assets/videos/20250927-DSC02880.JPG" },
+                    { type: "image", src: "assets/videos/20250927-DSC02936.JPG" },
+                    { type: "image", src: "assets/videos/20250927-DSC02830.JPG" }
                 ]
             },
             "fashion-editorial": {
                 title: "Fashion Portrait",
                 category: "PORTRAIT FASHION",
                 desc: "Eksplorasi tata cahaya studio dan tone warna sinematik untuk pemotretan high fashion, menonjolkan tekstur pakaian dan ekspresi model secara mendalam.",
-                tools: "Sony A7IV, Studio Lighting, Lightroom, Photoshop",
+                tools: "Sony A7II, Studio Lighting, Lightroom, Photoshop",
                 gallery: [
-                    { type: "video", src: "assets/videos/dline outpit nongkrong clip.mp4" },
+                    { type: "video", src: "assets/Portrait/dline2.webm" },
+                    { type: "video", src: "assets/Portrait/dline1.webm" },
+                    { type: "video", src: "assets/Portrait/dline3.webm" },
+                    { type: "video", src: "assets/Portrait/ragunanqol.webm" },
                     { type: "image", src: "assets/katalog foto/portrait editorial.jpg" },
                     { type: "image", src: "assets/Portrait/DSC07365.jpeg" },
                     { type: "image", src: "assets/Portrait/DSC07379.jpeg" },
                     { type: "image", src: "assets/Portrait/DSC07374.jpeg" },
                     { type: "image", src: "assets/Portrait/DSC09535.JPG" },
-                    { type: "video", src: "assets/Portrait/clip_dline.webm" }
+                    { type: "image", src: "assets/Portrait/20250927-DSC02814.JPG" },
+                    { type: "image", src: "assets/Portrait/20250927-DSC02812.JPG" },
+                    { type: "image", src: "assets/Portrait/20250927-DSC02799.JPG" }
                 ]
             },
             "nonfiction-perfume": {
                 title: "Limasegi Dipinus",
                 category: "F&B PHOTOS",
-                desc: "Dokumentasi kuliner dan suasana cafe outdoor dengan pencahayaan alami di area Hutan Pinus Limasegi.",
-                tools: "Sony A7IV, FE 35mm F1.4 GM, Natural Light, Lightroom",
+                desc: "Mengeksplorasi visual kuliner dengan memakai continuous lighting dan suasana outdoor agar karakter menu utama semakin menonjol. Peran saya meliputi pengarahan visual, eksekusi kamera. brand yang bersangkutan meliputi Limasegi Dipinus, Dough Deli",
+                tools: "Sony A7II, FE 35mm, Lightroom",
                 gallery: [
                     { type: "video", src: "assets/F&B/limasegi1.webm" },
                     { type: "video", src: "assets/F&B/limasegi2.webm" },
@@ -995,6 +1023,7 @@
                     { type: "image", src: "assets/F&B/limasegi2.jpg" },
                     { type: "image", src: "assets/F&B/limasegi3.jpg" },
                     { type: "image", src: "assets/katalog foto/limasegidipinus.jpg" },
+                    { type: "video", src: "assets/F&B/doughdelli.webm" },
                     { type: "image", src: "assets/katalog foto/dough deli.JPG" },
                     { type: "image", src: "assets/F&B/DSC05621.JPG" },
                     { type: "image", src: "assets/F&B/DSC05490.JPG" },
@@ -1006,9 +1035,10 @@
                 title: "TEDS Product Showcase",
                 category: "PHOTO PRODUCT",
                 desc: "Fotografi produk komersial dengan pencahayaan kontras tinggi studio untuk kebutuhan materi promosi e-commerce.",
-                tools: "Sony A7IV, Studio Lighting, Photoshop, Lightroom",
+                tools: "Sony A7II, Studio Lighting, Photoshop, Lightroom",
                 gallery: [
                     { type: "video", src: "assets/Foto Produk/two heal.mp4" },
+                    { type: "video", src: "assets/Foto Produk/twoheal.webm" },
                     { type: "image", src: "assets/Foto Produk/MFI02897.jpeg" },
                     { type: "image", src: "assets/Foto Produk/TEDS PRODUK.jpeg" },
                     { type: "image", src: "assets/Foto Produk/DSC00116.JPG" },
@@ -1023,8 +1053,8 @@
             "automotive-showcase": {
                 title: "Wayang Performance Capture",
                 category: "DOCUMENTATIONS",
-                desc: "Dokumentasi pertunjukan seni budaya wayang dengan komposisi pencahayaan panggung kontras dan nuansa naratif sinematik.",
-                tools: "Sony A7IV, 85mm F1.8, Lightroom, DaVinci Resolve",
+                desc: "Dokumentasi pertunjukan dengan komposisi pencahayaan panggung kontras dan nuansa naratif sinematik.",
+                tools: "Sony A7II, Lightroom",
                 gallery: [
                     { type: "image", src: "assets/Documentation/DSC00810.JPG" },
                     { type: "image", src: "assets/katalog foto/wayang.JPG" },
@@ -1033,19 +1063,21 @@
                     { type: "image", src: "assets/Documentation/DSC04286.JPG" },
                     { type: "image", src: "assets/katalog foto/debat publik.JPG" },
                     { type: "image", src: "assets/Documentation/DSC08379.JPG" },
-                    { type: "image", src: "assets/Documentation/DSC08380.JPG" }
+                    { type: "image", src: "assets/Documentation/DSC08380.JPG" },
+                    { type: "video", src: "assets/Documentation/SA sampoerna academy.webm" },
                 ]
             },
             "minimalist-shadows": {
                 title: "Otomotive Content",
                 category: "OTOMOTIVE",
-                desc: "Produksi konten visual otomotif untuk reels dan feeds sosial media, menggabungkan pengambilan gambar sinematik serta color grading bergaya modern.",
-                tools: "Sony A7IV, DaVinci Resolve, Premiere Pro",
+                desc: "Produksi konten visual otomotif untuk reels dan feeds sosial media, menggabungkan pengambilan gambar sinematik.",
+                tools: "Sony A7II, DaVinci Resolve, Premiere Pro",
                 gallery: [
                     { type: "video", src: "assets/Car/bmwm3.webm" },
                     { type: "video", src: "assets/Car/testbaretunik.webm" },
                     { type: "video", src: "assets/Car/kontensupra.webm" },
                     { type: "video", src: "assets/Car/onguardppf.webm" },
+                    { type: "video", src: "assets/Car/bahanminggu.webm" },
                     { type: "image", src: "assets/Car/KKK04853.jpeg" },
                     { type: "image", src: "assets/Car/THUMBNAIL SUBARU BRZ.png" },
                     { type: "image", src: "assets/Car/xforce thumbnail.png" },
@@ -1055,10 +1087,10 @@
             "graduation-moments": {
                 title: "Graduation Memories",
                 category: "GRADUATION",
-                desc: "Dokumentasi momen kelulusan dan wisuda dengan pencahayaan alami, komposisi elegan, serta sentuhan tone warna hangat dan emosional.",
-                tools: "Sony A7IV, 50mm F1.4, Adobe Lightroom, Photoshop",
+                desc: "Dokumentasi momen kelulusan dan wisuda, komposisi elegan, serta sentuhan tone warna hangat dan emosional.",
+                tools: "Sony A7II, Adobe Lightroom, Photoshop",
                 gallery: [
-                    { type: "image", src: "assets/Wisuda/DSC01479 (1).jpg" },
+                    { type: "image", src: "assets/Wisuda/DSC01479-edit.jpg" },
                     { type: "image", src: "assets/Wisuda/DSC00236.JPG" },
                     { type: "image", src: "assets/Wisuda/DSC00234.JPG" },
                     { type: "image", src: "assets/Wisuda/DSC00230.JPG" },
@@ -1070,11 +1102,13 @@
                 ]
             },
             "graphic-design": {
-                title: "Creative Graphic Design",
+                title: "Graphic Design & Brand Identity",
                 category: "GRAPHIC DESIGN",
-                desc: "Eksplorasi desain grafis digital, typography, layout poster modern, dan visual branding identity untuk media promosi komersial.",
+                desc: "Eksplorasi desain grafis digital, typography, layouting, Graphic Standar Manual (GSM) dan visual branding identity.",
                 tools: "Adobe Photoshop, Illustrator, Figma",
                 gallery: [
+                    { type: "pdf", src: "assets/grafis/padepokan-jugala.pdf" },
+                    { type: "pdf", src: "assets/grafis/sigma-barbershop.pdf" },
                     { type: "image", src: "assets/Car/thumbnail bmw m4 asettt.png" },
                     { type: "image", src: "assets/Car/THUMBNAIL SUBARU BRZ.png" },
                     { type: "image", src: "assets/Car/supra thumbnail coating.png" },
@@ -1090,7 +1124,7 @@
                 desc: "Pengambilan gambar udara resolusi tinggi 4K dengan pergerakan kamera sinematik untuk landscape scale, commercial visual ads, dan environmental context.",
                 tools: "DJI Mavic / Air Series, Premiere Pro, DaVinci Resolve",
                 gallery: [
-                    { type: "video", src: "assets/drone/lepasdronefull.webm" },
+                    { type: "video", src: "assets/drone/lepasdrone.webm" },
                 ]
             }
         };
@@ -1120,8 +1154,17 @@
                 // Distribusikan media secara berselang-seling (Kiri - Kanan - Kiri - Kanan)
                 data.gallery.forEach((item, index) => {
                     const targetCol = (index % 2 === 0) ? col1 : col2;
-                    
-                    if (item.type === 'youtube') {
+                    if (item.type === 'pdf') {
+                        targetCol.innerHTML += `
+                            <div class="rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950 shadow-lg w-full">
+                                <iframe 
+                                    src="${item.src}#toolbar=0&navpanes=0" 
+                                    class="w-full h-[450px] sm:h-[600px] rounded-2xl border-0 block bg-zinc-900" 
+                                    oncontextmenu="return false;">
+                                </iframe>
+                            </div>
+                        `;
+                    } else if (item.type === 'youtube') {
                         targetCol.innerHTML += `
                             <div class="rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950 shadow-lg w-full aspect-video">
                                 <iframe 
@@ -1138,6 +1181,12 @@
                         targetCol.innerHTML += `
                             <div class="rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950 shadow-lg w-full">
                                 <video controls playsinline preload="metadata" class="w-full h-auto block bg-black">
+                                    controlsList="nodownload noremoteplayback" 
+                                    disablePictureInPicture 
+                                    oncontextmenu="return false;" 
+                                    playsinline 
+                                    preload="metadata" 
+                                    class="w-full h-auto block bg-black select-none">
                                     <source src="${item.src}">
                                     Browser Anda tidak mendukung tag video.
                                 </video>
